@@ -1,0 +1,38 @@
+[workspace]
+members = [
+    ".",
+    "crates/acoustic-core",
+    "crates/acoustic-audio",
+    "crates/acoustic-input",
+    "crates/acoustic-ui",
+    "crates/acoustic-songs",
+    "crates/acoustic-engine",
+]
+resolver = "2"
+
+[workspace.dependencies]
+acoustic-core   = { path = "crates/acoustic-core" }
+acoustic-audio  = { path = "crates/acoustic-audio" }
+acoustic-input  = { path = "crates/acoustic-input" }
+acoustic-ui     = { path = "crates/acoustic-ui" }
+acoustic-songs  = { path = "crates/acoustic-songs" }
+acoustic-engine = { path = "crates/acoustic-engine" }
+anyhow          = "1"
+serde           = { version = "1", features = ["derive"] }
+toml            = "0.8"
+crossterm       = "0.28"
+ratatui         = { version = "0.29", features = ["crossterm"] }
+
+[package]
+name    = "acoustic-shell"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+acoustic-engine = { workspace = true }
+acoustic-audio  = { workspace = true }
+acoustic-input  = { workspace = true }
+acoustic-ui     = { workspace = true }
+acoustic-songs  = { workspace = true }
+clap            = { version = "4", features = ["derive"] }
+anyhow          = { workspace = true }

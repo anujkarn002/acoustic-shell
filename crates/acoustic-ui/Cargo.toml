@@ -1,0 +1,10 @@
+[package]
+name    = "acoustic-ui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+acoustic-core = { workspace = true }
+ratatui       = { workspace = true }
+crossterm     = { workspace = true }
+anyhow        = { workspace = true }

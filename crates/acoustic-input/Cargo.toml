@@ -1,0 +1,9 @@
+[package]
+name    = "acoustic-input"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+acoustic-core = { workspace = true }
+crossterm     = { workspace = true }
+anyhow        = { workspace = true }

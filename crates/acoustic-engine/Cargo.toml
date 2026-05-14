@@ -1,0 +1,12 @@
+[package]
+name    = "acoustic-engine"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+acoustic-core  = { workspace = true }
+acoustic-audio = { workspace = true }
+acoustic-input = { workspace = true }
+acoustic-ui    = { workspace = true }
+acoustic-songs = { workspace = true }
+anyhow         = { workspace = true }
