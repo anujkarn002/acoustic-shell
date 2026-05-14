@@ -26,15 +26,12 @@ jobs:
             artifact_name: acoustic-shell-macos-arm64
             binary: acoustic-shell
 
-          - os: macos-13
-            target: x86_64-apple-darwin
-            artifact_name: acoustic-shell-macos-x86_64
-            binary: acoustic-shell
-
     runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
@@ -54,3 +51,5 @@ jobs:
           name: ${{ matrix.artifact_name }}
           path: target/${{ matrix.target }}/release/${{ matrix.binary }}
           if-no-files-found: error
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
